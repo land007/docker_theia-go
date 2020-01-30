@@ -15,7 +15,7 @@ RUN apt-get update && apt-get upgrade -y && \
 	apt-get install -y net-tools iputils-ping vim curl wget unzip screen openssh-server git subversion locales software-properties-common lsof nmon iftop sysstat netcat-traditional pciutils kmod uuid-runtime && \
 	apt-get clean && \
 	npm install -g node-gyp supervisor && cd / && npm init -y && npm install socket.io ws express http-proxy bagpipe chokidar request nodemailer await-signal log4js moment && \
-	chown -R theia:theia /node_modules && chown -R theia:theia /usr/local/lib/node_modules && chown -R theia:theia /home/theia/.npm && chown -R theia:theia /usr/local/bin/
+	chown -R theia:theia /node_modules && chown -R theia:theia /usr/local/lib/node_modules && chown -R theia:theia /usr/local/bin/
 ADD *.sh /
 RUN sed -i 's/\r$//' /*.sh ; chmod +x /*.sh && \
 	echo $(date "+%Y-%m-%d_%H:%M:%S") >> /.image_times && \
